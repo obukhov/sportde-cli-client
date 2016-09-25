@@ -12,13 +12,12 @@ class ErrorParsingResponse extends ApiRequestError
     protected $parsedJson;
 
     /**
-     * ErrorParsingResponse constructor.
      * @param string $parsedJson
      */
     public function __construct($parsedJson)
     {
         $this->parsedJson = $parsedJson;
-        parent::__construct("Error parsing json response: $parsedJson");
+        parent::__construct(sprintf('Error parsing json response: %s', $parsedJson));
     }
 
     /**

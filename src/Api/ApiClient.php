@@ -33,7 +33,6 @@ class ApiClient
     protected $matchPlayerFactory;
 
     /**
-     * ApiClient constructor.
      * @param Client $guzzleClient
      * @param MatchFactory $matchFactory
      * @param MatchPlayerFactory $matchPlayerFactory
@@ -60,11 +59,11 @@ class ApiClient
      */
     public function getMatches($teamId, $seasonId)
     {
-        $response = $this->guzzleClient->request("GET", sprintf(self::MATCHES_URI_TEMPLATE, $seasonId, $teamId));
+        $response = $this->guzzleClient->request('GET', sprintf(self::MATCHES_URI_TEMPLATE, $seasonId, $teamId));
         $responseArray = $this->decodeResponse($response);
 
         if (!isset($responseArray['match'])) {
-            throw new MatchesNotFound("Matches for provided criteria not found");
+            throw new MatchesNotFound('Matches for provided criteria not found');
         }
 
         foreach ($responseArray['match'] as $match) {
@@ -79,17 +78,19 @@ class ApiClient
      */
     public function getMatchPlayers($matchId)
     {
-        $response = $this->guzzleClient->request("GET", sprintf(self::MATCH_PLAYERS_URI_TEMPLATE, $matchId));
+        $response = $this->guzzleClient->request('GET', sprintf(self::MATCH_PLAYERS_URI_TEMPLATE, $matchId));
         $responseArray = $this->decodeResponse($response);
 
         if (empty($responseArray)) {
-            throw new MatchesNotFound("Matches for provided criteria not found");
+            throw new MatchesNotFound('Matches for provided criteria not found');
         }
 
-        var_dump($responseArray);
-
-        foreach ($response as $matchPlayer) {
-            yield $this->matchPlayerFactory->create($matchPlayer);
+        foreach ($responseArray as $matchPlayer) {
+            try {
+                yield $this->matchPlayerFactory->create($matchPlayer);
+            } catch (\Exception $e) {
+                // skip non-properly formatted elements
+            }
         }
     }
 

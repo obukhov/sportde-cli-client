@@ -32,7 +32,7 @@ class MatchFactory
         }
 
         return new Match(
-            $match["id"],
+            $match['id'],
             $this->dateTimeFactory->create(sprintf('%s %s', $match['match_date'], $match['match_time']))
         );
     }

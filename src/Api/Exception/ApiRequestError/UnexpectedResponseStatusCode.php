@@ -11,9 +11,12 @@ class UnexpectedResponseStatusCode extends ApiRequestError
      */
     protected $statusCode;
 
+    /**
+     * @param string $actualResponseCode
+     */
     public function __construct($actualResponseCode)
     {
-        parent::__construct("Unexpected API response status code: $actualResponseCode");
+        parent::__construct(sprintf('Unexpected API response status code: %d', $actualResponseCode));
         $this->statusCode = $actualResponseCode;
     }
 

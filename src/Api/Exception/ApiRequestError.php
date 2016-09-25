@@ -2,6 +2,6 @@
 
 namespace SportDe\CliClient\Api\Exception;
 
-abstract class ApiRequestError extends \Exception
+abstract class ApiRequestError extends ApiException
 {
 }

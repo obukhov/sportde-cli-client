@@ -2,7 +2,7 @@
 
 namespace SportDe\CliClient\Api\Exception;
 
-class WrongDateTimeFormat extends \Exception
+class WrongDateTimeFormat extends ApiException
 {
     /**
      * @var string
@@ -14,7 +14,7 @@ class WrongDateTimeFormat extends \Exception
      */
     public function __construct($parsedString)
     {
-        parent::__construct("Error parsing date time string: $parsedString");
+        parent::__construct(sprintf('Error parsing date time string: %s', $parsedString));
         $this->parsedString = $parsedString;
     }
 

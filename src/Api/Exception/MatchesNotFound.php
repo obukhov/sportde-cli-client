@@ -2,6 +2,6 @@
 
 namespace SportDe\CliClient\Api\Exception;
 
-class MatchesNotFound extends \Exception
+class MatchesNotFound extends ApiException
 {
 }

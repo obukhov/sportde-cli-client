@@ -1,7 +1,9 @@
 <?php
-use SportDe\CliClient\Application;
-use SportDe\CliClient\Application\ServiceLocator;
+use SportDe\CliClient\Application\Application;
+use SportDe\CliClient\Application\ServiceFactory;
 
 require __DIR__ . '/vendor/autoload.php';
 
-(new Application(new ServiceLocator()))->process($_SERVER['argv']);
+$exitCode = (new Application(new ServiceFactory()))->run($_SERVER['argv']);
+
+exit($exitCode);
