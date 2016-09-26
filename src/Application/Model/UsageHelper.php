@@ -10,11 +10,18 @@ class UsageHelper implements ResultFormatter
     protected $exception;
 
     /**
-     * @param \Exception $exception
+     * @var string
      */
-    public function __construct(\Exception $exception)
+    private $scriptName;
+
+    /**
+     * @param \Exception $exception
+     * @param string $scriptName
+     */
+    public function __construct(\Exception $exception, $scriptName)
     {
         $this->exception = $exception;
+        $this->scriptName = $scriptName;
     }
 
     /**
@@ -23,7 +30,8 @@ class UsageHelper implements ResultFormatter
     public function format()
     {
         $outputFormatted = sprintf('Error: %s' . PHP_EOL, $this->exception->getMessage());
-        $outputFormatted .= 'Usage: php get.php <seasonId> <teamId> [<currentDate Y-m-dTH:i:s>]'. PHP_EOL . PHP_EOL;
+        $outputFormatted .= 'Usage: php ' . $this->scriptName
+            . ' <seasonId> <teamId> [<currentDate Y-m-dTH:i:s>]' . PHP_EOL . PHP_EOL;
 
         return $outputFormatted;
     }

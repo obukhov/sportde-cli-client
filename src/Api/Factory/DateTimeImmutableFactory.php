@@ -14,7 +14,7 @@ class DateTimeImmutableFactory
      */
     public function create($dateTimeFormatted, $format = 'd.m.Y H:i')
     {
-        $dateTime = \DateTimeImmutable::createFromFormat($format, $dateTimeFormatted);
+        $dateTime = \DateTimeImmutable::createFromFormat($format, $dateTimeFormatted, new \DateTimeZone('UTC'));
 
         if (false === $dateTime) {
             throw new WrongDateTimeFormat($dateTimeFormatted);
@@ -28,6 +28,6 @@ class DateTimeImmutableFactory
      */
     public function createCurrent()
     {
-        return new \DateTimeImmutable();
+        return new \DateTimeImmutable('now', new \DateTimeZone('UTC'));
     }
 }

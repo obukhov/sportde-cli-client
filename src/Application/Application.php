@@ -28,7 +28,7 @@ class Application
             echo $result->format();
             return 0;
         } catch (\Exception $e) {
-            echo $this->services->getUsageHelper($e)->format();
+            echo $this->services->getUsageHelper($e, $arguments[0])->format();
             return 1;
         }
     }

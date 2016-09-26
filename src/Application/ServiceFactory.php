@@ -32,11 +32,12 @@ class ServiceFactory
 
     /**
      * @param \Exception $exception
+     * @param string $scriptName
      * @return UsageHelper
      */
-    public function getUsageHelper(\Exception $exception)
+    public function getUsageHelper(\Exception $exception, $scriptName)
     {
-        return new UsageHelper($exception);
+        return new UsageHelper($exception, $scriptName);
     }
 
     /**
