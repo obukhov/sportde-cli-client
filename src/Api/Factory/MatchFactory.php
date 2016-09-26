@@ -25,7 +25,7 @@ class MatchFactory
      * @return Match
      * @throws WrongJsonStructure
      */
-    public function create($match)
+    public function create(array $match)
     {
         if (!isset($match['id'], $match['match_date'], $match['match_time'])) {
             throw new WrongJsonStructure($match);

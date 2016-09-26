@@ -6,7 +6,7 @@ use SportDe\CliClient\Application\Exception\NoProcessorForCommand;
 use SportDe\CliClient\Application\Model\Command;
 use SportDe\CliClient\Application\Model\Processor;
 use SportDe\CliClient\Application\ServiceFactory;
-use SportDe\CliClient\Commands\LineUp\GetLineUpCommand;
+use SportDe\CliClient\Command\LineUp\GetLineUpCommand;
 
 class CommandProcessorFactory
 {

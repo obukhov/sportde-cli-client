@@ -8,7 +8,7 @@ use SportDe\CliClient\Api\Factory\MatchFactory;
 use SportDe\CliClient\Api\Factory\MatchPlayerFactory;
 use SportDe\CliClient\Application\Service\CommandParser;
 use SportDe\CliClient\Application\Service\CommandProcessorFactory;
-use SportDe\CliClient\Commands\LineUp\LineUpService;
+use SportDe\CliClient\Command\LineUp\LineUpService;
 use SportDe\CliClient\Application\Model\UsageHelper;
 use SportDe\CliClient\Api\ApiClient;
 

@@ -20,15 +20,22 @@ class MatchPlayer
     protected $person;
 
     /**
+     * @var string
+     */
+    protected $kind;
+
+    /**
      * @param Team $team
      * @param Role $role
      * @param Person $person
+     * @param string $kind
      */
-    public function __construct(Team $team, Role $role, Person $person)
+    public function __construct(Team $team, Role $role, Person $person, $kind)
     {
         $this->team = $team;
         $this->role = $role;
         $this->person = $person;
+        $this->kind = $kind;
     }
 
     /**
@@ -53,5 +60,13 @@ class MatchPlayer
     public function getPerson()
     {
         return $this->person;
+    }
+
+    /**
+     * @return string
+     */
+    public function getKind()
+    {
+        return $this->kind;
     }
 }

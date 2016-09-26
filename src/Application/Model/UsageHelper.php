@@ -23,7 +23,7 @@ class UsageHelper implements ResultFormatter
     public function format()
     {
         $outputFormatted = sprintf('Error: %s' . PHP_EOL, $this->exception->getMessage());
-        $outputFormatted .= 'Usage: php get.php <seasonId> <teamId> [<currentDate>]'. PHP_EOL . PHP_EOL;
+        $outputFormatted .= 'Usage: php get.php <seasonId> <teamId> [<currentDate Y-m-dTH:i:s>]'. PHP_EOL . PHP_EOL;
 
         return $outputFormatted;
     }

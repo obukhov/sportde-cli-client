@@ -5,7 +5,7 @@ namespace SportDe\CliClient\Application\Service;
 use SportDe\CliClient\Api\Factory\DateTimeImmutableFactory;
 use SportDe\CliClient\Application\Exception\WrongNumberOfArguments;
 use SportDe\CliClient\Application\Model\Command;
-use SportDe\CliClient\Commands\LineUp\GetLineUpCommand;
+use SportDe\CliClient\Command\LineUp\GetLineUpCommand;
 
 class CommandParser
 {

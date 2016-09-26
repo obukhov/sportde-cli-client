@@ -1,6 +1,6 @@
 <?php
 
-namespace SportDe\CliClient\Commands\LineUp\Model;
+namespace SportDe\CliClient\Command\LineUp\Model;
 
 use SportDe\CliClient\Api\Model\Team;
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace SportDe\CliClient\Commands\LineUp;
+namespace SportDe\CliClient\Command\LineUp;
 
 use SportDe\CliClient\Api\Model\Match;
 use SportDe\CliClient\Api\Model\Person;
 use SportDe\CliClient\Application\Model\ResultFormatter;
-use SportDe\CliClient\Commands\LineUp\Model\LineUp;
-use SportDe\CliClient\Commands\LineUp\Model\RolePersons;
-use SportDe\CliClient\Commands\LineUp\Model\TeamLineUp;
+use SportDe\CliClient\Command\LineUp\Model\LineUp;
+use SportDe\CliClient\Command\LineUp\Model\RolePersons;
+use SportDe\CliClient\Command\LineUp\Model\TeamLineUp;
 
 class LineUpFormatter implements ResultFormatter
 {

@@ -24,12 +24,14 @@ class MatchPlayerFactory
             $matchPlayer['team_person']['role']['name'],
             $matchPlayer['person']['id'],
             $matchPlayer['person']['firstname'],
-            $matchPlayer['person']['surname']
+            $matchPlayer['person']['surname'],
+            $matchPlayer['kind']
         );
 
         if (!$isArrayValid) {
             throw new WrongJsonStructure($matchPlayer);
         }
+
         return new MatchPlayer(
             new Team($matchPlayer['team']['id'], $matchPlayer['team']['name']),
             new Role($matchPlayer['team_person']['role']['id'], $matchPlayer['team_person']['role']['name']),
@@ -37,7 +39,8 @@ class MatchPlayerFactory
                 $matchPlayer['person']['id'],
                 $matchPlayer['person']['firstname'],
                 $matchPlayer['person']['surname']
-            )
+            ),
+            $matchPlayer['kind']
         );
     }
 }

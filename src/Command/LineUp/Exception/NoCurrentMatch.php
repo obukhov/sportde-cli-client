@@ -1,8 +1,8 @@
 <?php
 
-namespace SportDe\CliClient\Commands\LineUp\Exception;
+namespace SportDe\CliClient\Command\LineUp\Exception;
 
-use SportDe\CliClient\Commands\Exception\CommandException;
+use SportDe\CliClient\Command\Exception\CommandException;
 
 class NoCurrentMatch extends CommandException
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SportDe\CliClient\Commands\Exception;
+namespace SportDe\CliClient\Command\Exception;
 
 class WrongCommandException extends CommandException
 {
