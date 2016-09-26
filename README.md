@@ -1,7 +1,7 @@
 Usage
 =====
 
-To shop match lineup for season "s" and team "t" run:
+To show match lineup for season "s" and team "t" run:
 
 ```
 php get.php  s t
@@ -53,7 +53,7 @@ To install dependencies run:
 composer install
 ```
 
-If you don't have composer installed, install it with (instruction from official site)[https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx]
+If you don't have composer installed, install it with [instruction from official site](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
 
 
 Tests
