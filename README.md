@@ -6,7 +6,10 @@ To install dependencies run:
 composer install
 ```
 
-If you don't have composer installed, install it with [instructions from official site](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+If you don't have composer installed, 
+install it with [instructions from official site](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+
+You can use ```./sportsde-cli-client.phar``` instead.
 
 Usage
 =====
